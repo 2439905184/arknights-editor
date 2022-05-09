@@ -1,0 +1,314 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://img/Texture2D/DungeonUI_atlas0.png" type="Texture" id=1]
+[ext_resource path="res://empty.tres" type="Texture" id=2]
+[ext_resource path="res://script/group.gd" type="Script" id=3]
+[ext_resource path="res://img/Texture2D/MainUI_atlas0.png" type="Texture" id=4]
+[ext_resource path="res://char.tscn" type="PackedScene" id=5]
+[ext_resource path="res://font/Alibaba-PuHuiTi-Regular.otf" type="DynamicFontData" id=6]
+[ext_resource path="res://script/MainControl.gd" type="Script" id=8]
+
+[sub_resource type="AtlasTexture" id=1]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 4.87247, -4.54251, 231.942, 84.835 )
+
+[sub_resource type="AtlasTexture" id=2]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 0, 0, 617, 1080 )
+
+[sub_resource type="DynamicFont" id=9]
+font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=13]
+size = 30
+font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=14]
+size = 19
+font_data = ExtResource( 6 )
+
+[sub_resource type="AtlasTexture" id=10]
+flags = 4
+atlas = ExtResource( 4 )
+
+[sub_resource type="AtlasTexture" id=11]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 363, 1719, 254, 104 )
+
+[sub_resource type="AtlasTexture" id=12]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 238, 1837, 236, 104 )
+
+[node name="group" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="back" type="TextureButton" parent="."]
+margin_right = 231.0
+margin_bottom = 84.0
+texture_normal = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="place1" type="TextureButton" parent="."]
+margin_left = 66.0
+margin_top = 54.0
+margin_right = 201.0
+margin_bottom = 286.0
+texture_normal = ExtResource( 2 )
+expand = true
+stretch_mode = 4
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GridContainer" type="GridContainer" parent="."]
+visible = false
+margin_left = 110.0
+margin_top = 80.0
+margin_right = 1426.0
+margin_bottom = 966.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+columns = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect2" type="TextureRect" parent="GridContainer"]
+margin_right = 216.0
+margin_bottom = 441.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect3" type="TextureRect" parent="GridContainer"]
+margin_left = 220.0
+margin_right = 436.0
+margin_bottom = 441.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect4" type="TextureRect" parent="GridContainer"]
+margin_left = 440.0
+margin_right = 656.0
+margin_bottom = 441.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect5" type="TextureRect" parent="GridContainer"]
+margin_left = 660.0
+margin_right = 876.0
+margin_bottom = 441.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect6" type="TextureRect" parent="GridContainer"]
+margin_left = 880.0
+margin_right = 1096.0
+margin_bottom = 441.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect7" type="TextureRect" parent="GridContainer"]
+margin_left = 1100.0
+margin_right = 1316.0
+margin_bottom = 441.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect8" type="TextureRect" parent="GridContainer"]
+margin_top = 445.0
+margin_right = 216.0
+margin_bottom = 886.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect9" type="TextureRect" parent="GridContainer"]
+margin_left = 220.0
+margin_top = 445.0
+margin_right = 436.0
+margin_bottom = 886.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect10" type="TextureRect" parent="GridContainer"]
+margin_left = 440.0
+margin_top = 445.0
+margin_right = 656.0
+margin_bottom = 886.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect11" type="TextureRect" parent="GridContainer"]
+margin_left = 660.0
+margin_top = 445.0
+margin_right = 876.0
+margin_bottom = 886.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect12" type="TextureRect" parent="GridContainer"]
+margin_left = 880.0
+margin_top = 445.0
+margin_right = 1096.0
+margin_bottom = 886.0
+texture = ExtResource( 2 )
+
+[node name="MainControl" type="Control" parent="."]
+margin_right = 1278.0
+margin_bottom = 721.0
+script = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="MainControl"]
+margin_right = 1279.0
+margin_bottom = 719.0
+color = Color( 1, 1, 1, 0.858824 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="left" type="TextureRect" parent="MainControl"]
+margin_right = 407.0
+margin_bottom = 712.0
+texture = SubResource( 2 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="job" type="Button" parent="MainControl"]
+margin_left = 1233.0
+margin_top = 3.0
+margin_right = 1277.0
+margin_bottom = 43.0
+custom_fonts/font = SubResource( 9 )
+text = "职业"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MainControl"]
+margin_left = 407.0
+margin_top = 38.0
+margin_right = 1280.0
+margin_bottom = 646.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MainControl/ScrollContainer"]
+margin_right = 1368.0
+margin_bottom = 360.0
+custom_constants/separation = 18
+
+[node name="shuangye" parent="MainControl/ScrollContainer/HBoxContainer" instance=ExtResource( 5 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 180.0
+margin_bottom = 360.0
+
+[node name="char2" parent="MainControl/ScrollContainer/HBoxContainer" instance=ExtResource( 5 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 198.0
+margin_right = 378.0
+margin_bottom = 360.0
+
+[node name="char3" parent="MainControl/ScrollContainer/HBoxContainer" instance=ExtResource( 5 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 396.0
+margin_right = 576.0
+margin_bottom = 360.0
+
+[node name="char4" parent="MainControl/ScrollContainer/HBoxContainer" instance=ExtResource( 5 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 594.0
+margin_right = 774.0
+margin_bottom = 360.0
+
+[node name="char5" parent="MainControl/ScrollContainer/HBoxContainer" instance=ExtResource( 5 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 792.0
+margin_right = 972.0
+margin_bottom = 360.0
+
+[node name="char6" parent="MainControl/ScrollContainer/HBoxContainer" instance=ExtResource( 5 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 990.0
+margin_right = 1170.0
+margin_bottom = 360.0
+
+[node name="char7" parent="MainControl/ScrollContainer/HBoxContainer" instance=ExtResource( 5 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 1188.0
+margin_right = 1368.0
+margin_bottom = 360.0
+
+[node name="char_name" type="Label" parent="MainControl"]
+margin_left = 7.0
+margin_top = 52.0
+margin_right = 67.0
+margin_bottom = 94.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 13 )
+text = "霜叶"
+
+[node name="ColorRect2" type="ColorRect" parent="MainControl"]
+margin_left = 1.0
+margin_top = 136.0
+margin_right = 199.0
+margin_bottom = 290.0
+color = Color( 0.541176, 0.501961, 0.501961, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="char_name2" type="Label" parent="MainControl/ColorRect2"]
+margin_left = 6.0
+margin_top = 11.0
+margin_right = 82.0
+margin_bottom = 38.0
+custom_fonts/font = SubResource( 14 )
+text = "攻击范围"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer"]
+margin_right = 2048.0
+margin_bottom = 2048.0
+texture = SubResource( 10 )
+
+[node name="add" type="TextureButton" parent="."]
+margin_left = 1030.0
+margin_top = 643.0
+margin_right = 1070.0
+margin_bottom = 683.0
+texture_normal = SubResource( 11 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="cancel" type="TextureButton" parent="."]
+margin_left = 783.0
+margin_top = 643.0
+margin_right = 1037.0
+margin_bottom = 747.0
+texture_normal = SubResource( 12 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="place1" to="." method="_on_place1_pressed"]
+[connection signal="pressed" from="MainControl/job" to="MainControl" method="_on_job_pressed"]
+[connection signal="toggled" from="MainControl/ScrollContainer/HBoxContainer/shuangye" to="MainControl" method="_on_shuangye_toggled"]

@@ -1,0 +1,14 @@
+[remap]
+
+importer="raiix.spine_runtime.atlas"
+type="SpineAtlasResource"
+path="res://.import/dyn_illust_char_1012_skadi2.atlas-bf2d21aa2b56ba09bac9caec4d42215d.spatlas"
+
+[deps]
+
+source_file="res://dyn_illust_char_1012_skadi2.atlas"
+dest_files=[ "res://.import/dyn_illust_char_1012_skadi2.atlas-bf2d21aa2b56ba09bac9caec4d42215d.spatlas" ]
+
+[params]
+
+normal_texture_prefix="n"

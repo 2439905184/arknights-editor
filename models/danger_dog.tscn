@@ -1,0 +1,58 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://img/enemy/Texture2D/danger_dog.png" type="Texture" id=1]
+[ext_resource path="res://script/danger_dog.gd" type="Script" id=2]
+
+[sub_resource type="AtlasTexture" id=1]
+flags = 7
+atlas = ExtResource( 1 )
+region = Rect2( 3, 107, 63, 48 )
+
+[sub_resource type="AtlasTexture" id=2]
+flags = 7
+atlas = ExtResource( 1 )
+region = Rect2( 3, 161, 104, 58 )
+
+[sub_resource type="AtlasTexture" id=3]
+flags = 7
+atlas = ExtResource( 1 )
+region = Rect2( 185, 177, 31, 77 )
+
+[sub_resource type="AtlasTexture" id=4]
+flags = 7
+atlas = ExtResource( 1 )
+region = Rect2( 150, 178, 33, 72 )
+
+[sub_resource type="AtlasTexture" id=5]
+flags = 7
+atlas = ExtResource( 1 )
+region = Rect2( 74, 111, 61, 43 )
+
+[sub_resource type="BoxShape" id=6]
+extents = Vector3( 0.626413, 0.519497, 0.0762847 )
+
+[node name="danger_dog" type="KinematicBody"]
+script = ExtResource( 2 )
+
+[node name="head" type="Sprite3D" parent="."]
+texture = SubResource( 1 )
+
+[node name="body" type="Sprite3D" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.419692, -0.0595792, -0.048562 )
+texture = SubResource( 2 )
+
+[node name="leg1" type="Sprite3D" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.140155, -0.48419, -0.103016 )
+texture = SubResource( 3 )
+
+[node name="leg2" type="Sprite3D" parent="."]
+transform = Transform( 0.904209, 0.42709, 0, -0.42709, 0.904209, 0, 0, 0, 1, -0.908986, -0.48419, -0.103016 )
+texture = SubResource( 4 )
+
+[node name="tail" type="Sprite3D" parent="."]
+transform = Transform( 0.904209, 0.42709, 0, -0.42709, 0.904209, 0, 0, 0, 1, -0.965523, 0.101696, -0.17012 )
+texture = SubResource( 5 )
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.394627, -0.115486, 0 )
+shape = SubResource( 6 )

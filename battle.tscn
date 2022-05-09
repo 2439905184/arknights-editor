@@ -1,0 +1,146 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://models/blocks.meshlib" type="MeshLibrary" id=1]
+[ext_resource path="res://img/head/head.tscn" type="PackedScene" id=2]
+[ext_resource path="res://font/40font.tres" type="DynamicFont" id=3]
+[ext_resource path="res://script/battle.gd" type="Script" id=4]
+[ext_resource path="res://models/danger_dog.tscn" type="PackedScene" id=5]
+[ext_resource path="res://cards_group.tres" type="ButtonGroup" id=6]
+[ext_resource path="res://script/AAera.gd" type="Script" id=7]
+
+[sub_resource type="BoxShape" id=1]
+
+[node name="battle" type="Spatial"]
+script = ExtResource( 4 )
+
+[node name="CE1" type="GridMap" parent="."]
+mesh_library = ExtResource( 1 )
+data = {
+"cells": PoolIntArray( 3, 0, 3, 65531, 0, 2, -65536, 0, 0, -65535, 0, 0, -65534, 0, 0, -65533, 0, 0, -5, 0, 0, -4, 0, 0, -3, 0, 0, -2, 0, 0, -1, 0, 0, 3, 65535, 3, 65531, 65535, 2, -65536, 65535, 0, -65535, 65535, 0, -65534, 65535, 0, -65533, 65535, 0, -5, 65535, 0, -4, 65535, 0, -3, 65535, 0, -2, 65535, 0, -1, 65535, 0 )
+}
+__meta__ = {
+"_editor_clip_": 0,
+"_editor_description_": "钱本1（副本）",
+"_editor_floor_": Vector3( 0, -1, 0 )
+}
+
+[node name="Area" type="Area" parent="CE1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.66441, 0, -0.443996 )
+script = ExtResource( 7 )
+
+[node name="CollisionShape" type="CollisionShape" parent="CE1/Area"]
+shape = SubResource( 1 )
+
+[node name="Camera" type="Camera" parent="."]
+transform = Transform( 1, 0, 0, 0, 0.594851, 0.803836, 0, -0.803836, 0.594851, -0.462031, 14.6749, 6.84955 )
+
+[node name="cards" type="HBoxContainer" parent="."]
+margin_left = 198.0
+margin_top = 629.0
+margin_right = 2366.0
+margin_bottom = 809.0
+rect_scale = Vector2( 0.5, 0.5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="head" parent="cards" instance=ExtResource( 2 )]
+group = ExtResource( 6 )
+
+[node name="head2" parent="cards" instance=ExtResource( 2 )]
+toggle_mode = true
+group = ExtResource( 6 )
+
+[node name="head3" parent="cards" instance=ExtResource( 2 )]
+toggle_mode = true
+group = ExtResource( 6 )
+
+[node name="head4" parent="cards" instance=ExtResource( 2 )]
+toggle_mode = true
+group = ExtResource( 6 )
+
+[node name="head5" parent="cards" instance=ExtResource( 2 )]
+toggle_mode = true
+group = ExtResource( 6 )
+
+[node name="head6" parent="cards" instance=ExtResource( 2 )]
+toggle_mode = true
+group = ExtResource( 6 )
+
+[node name="head7" parent="cards" instance=ExtResource( 2 )]
+toggle_mode = true
+group = ExtResource( 6 )
+
+[node name="head8" parent="cards" instance=ExtResource( 2 )]
+toggle_mode = true
+group = ExtResource( 6 )
+
+[node name="head9" parent="cards" instance=ExtResource( 2 )]
+toggle_mode = true
+group = ExtResource( 6 )
+
+[node name="head10" parent="cards" instance=ExtResource( 2 )]
+toggle_mode = true
+group = ExtResource( 6 )
+
+[node name="head11" parent="cards" instance=ExtResource( 2 )]
+toggle_mode = true
+group = ExtResource( 6 )
+
+[node name="head12" parent="cards" instance=ExtResource( 2 )]
+toggle_mode = true
+group = ExtResource( 6 )
+
+[node name="next" type="Button" parent="."]
+margin_left = 1003.0
+margin_top = 1.0
+margin_right = 1132.0
+margin_bottom = 62.0
+custom_fonts/font = ExtResource( 3 )
+text = "下一步"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="priv" type="Button" parent="."]
+margin_left = 857.0
+margin_top = 1.0
+margin_right = 986.0
+margin_bottom = 62.0
+custom_fonts/font = ExtResource( 3 )
+text = "上一步"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="pause" type="Button" parent="."]
+pause_mode = 2
+margin_left = 1150.0
+margin_right = 1279.0
+margin_bottom = 61.0
+custom_fonts/font = ExtResource( 3 )
+toggle_mode = true
+text = "暂停"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="enemy" type="Sprite3D" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.12211, 0 )
+
+[node name="danger_dog" parent="." instance=ExtResource( 5 )]
+transform = Transform( -1, 0, -8.74228e-08, 4.34243e-08, 0.867913, -0.496716, 7.58753e-08, -0.496716, -0.867913, 4.55533, 0.815414, -0.494781 )
+speed = -0.5
+
+[node name="lift" type="Label" parent="."]
+margin_left = 394.0
+margin_top = -2.0
+margin_right = 462.0
+margin_bottom = 53.0
+custom_fonts/font = ExtResource( 3 )
+text = "Life:3"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="input_event" from="CE1/Area" to="CE1/Area" method="_on_Area_input_event"]

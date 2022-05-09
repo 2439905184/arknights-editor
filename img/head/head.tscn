@@ -1,0 +1,99 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://font/Alibaba-PuHuiTi-Regular.otf" type="DynamicFontData" id=1]
+[ext_resource path="res://img/head/xianfeng.tres" type="Texture" id=2]
+[ext_resource path="res://img/head/xunshi.tres" type="Texture" id=3]
+[ext_resource path="res://script/head.gd" type="Script" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 30
+font_data = ExtResource( 1 )
+
+[sub_resource type="Animation" id=2]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "select"
+length = 0.25
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 0, -64 ) ]
+}
+
+[node name="head" type="TextureButton"]
+margin_right = 177.0
+margin_bottom = 180.0
+texture_normal = ExtResource( 3 )
+stretch_mode = 1
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = 42.0
+margin_top = 18.0
+margin_right = 116.0
+margin_bottom = 58.0
+color = Color( 0.0901961, 0.0862745, 0.0862745, 0.670588 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="job" type="TextureRect" parent="."]
+margin_left = 47.0
+margin_top = 23.0
+margin_right = 78.0
+margin_bottom = 54.0
+texture = ExtResource( 2 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="cost" type="Label" parent="."]
+margin_left = 100.0
+margin_top = 18.0
+margin_right = 117.0
+margin_bottom = 60.0
+custom_fonts/font = SubResource( 1 )
+text = "9"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="sel_status" type="ColorRect" parent="."]
+margin_left = 52.0
+margin_top = 4.0
+margin_right = 92.0
+margin_bottom = 16.0
+color = Color( 0.0196078, 1, 0.219608, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 2 )
+anims/select = SubResource( 3 )
+
+[connection signal="toggled" from="." to="." method="_on_head_toggled"]
